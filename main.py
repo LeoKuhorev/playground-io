@@ -1,7 +1,7 @@
 import random
+
 from exceptions import QuitException
 from io_utils import IO
-
 
 io = IO()
 
@@ -52,12 +52,15 @@ try:
                 f"New item created!\n{str(new_item)}", style=IO.COLOR_SUCCESS)
             items.append(new_item)
 
-        elif user_selection == OPTIONS[1]:
+        if user_selection == OPTIONS[1]:
             selected_item = io.print_options(
                 [str(item) for item in items], "Select an item you want to edit:")
-        elif user_selection == OPTIONS[2]:
+            # Actual edit item logic goes here
+
+        if user_selection == OPTIONS[2]:
             selected_item = io.print_options(
                 [str(item) for item in items], "Select an item you want to delete:")
+            # Actual delete item logic goes here
 
 except QuitException:
     # This is made to gracefully handle quit at any moment
