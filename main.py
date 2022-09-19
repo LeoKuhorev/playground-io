@@ -14,6 +14,7 @@ WEBSITES = ["Amazon", "Ebay", "Bestbuy", "Walmart"]
 items = []
 
 
+
 try:
     io.print(WELCOME_MESSAGE)
 
@@ -31,7 +32,7 @@ try:
             items) > 0 else OPTIONS[:1], "Please select an option:")
 
         if user_selection == OPTIONS[0]:
-            new_item = {"links": []}
+            new_item: dict[str, list[str] | str | int] = {"links": []}
             new_item['name'] = io.input('Please enter item name: ')
 
             user_selection = io.print_options(
